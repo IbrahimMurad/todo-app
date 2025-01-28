@@ -69,18 +69,20 @@ export default function TodoElement(todo) {
 
     item.addEventListener('dragend', (event) => {
         item.classList.remove('dragging');
+
+        // Update sort order of the elements in the data store
         reorderTodoItems();
     });
 
     item.addEventListener('dragover', (event) => {
         event.preventDefault();
+
         const draggedItem = document.querySelector('.dragging');
         const target = event.target.closest('.todo-list-item');
         const targetSort = target.dataset.sort;
         const draggedSort = draggedItem.dataset.sort;
     
         if (targetSort < draggedSort) {
-            draggedItem.remove();
             target.before(draggedItem);
         } else {
             target.after(draggedItem);

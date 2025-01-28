@@ -3,6 +3,11 @@ import { updateItemsLeft } from './serveces.js';
 
 const todoList = document.getElementById('todo-list');
 
+/**
+ * Renders the todo list
+ * @param {Array} list - The list of todo items to render
+ * @param {string} filter - The filter to apply to the list
+ */
 export default async function renderList(list, filter = "all") {
 
   // sort the list by the sort order

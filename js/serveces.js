@@ -1,6 +1,12 @@
 import renderList from './TodoList.js';
 
+/**
+ * Gets data from local storage
+ * @returns {Array} The data from local storage or an empty array
+ */
 export function getData() {
+    // Get data from local storage and parse it as JSON
+    // or return an empty array
     try {
         return JSON.parse(localStorage.getItem('todoAppData')) || [];
     } catch (error) {
@@ -9,25 +15,32 @@ export function getData() {
     }
 }
 
+/**
+ * Saves data to local storage
+ * @param {Array} data - The data to save
+ */
 export function setData(data) {
+    // Save data to local storage as a JSON string
     localStorage.setItem('todoAppData', JSON.stringify(data))
 }
 
+/**
+ * Gets the currently active filter
+ * @returns {string} The currently active filter
+ */
 export function getFilter() {
-    const filterAll = document.getElementById('filter-all');
-    const filterActive = document.getElementById('filter-active');
-    const filterCompleted = document.getElementById('filter-completed');
-    if (filterAll.classList.contains('active')) {
-        return 'all';
-    }
-    if (filterActive.classList.contains('active')) {
-        return 'active';
-    }
-    if (filterCompleted.classList.contains('active')) {
-        return 'completed';
+    const filters = document.querySelectorAll('.filter-item');
+    for (const filter of filters) {
+        if (filter.classList.contains('active')) {
+            return filter.id.slice(7);
+        }
     }
 }
 
+/**
+ * Updates the items left counter in the list footer
+ * @param {Array} data - The todo list data
+ */
 export function updateItemsLeft(data = getData()) {
     const itemsLeft = document.getElementById('items-left');
     itemsLeft.textContent = `${data.filter(todo => !todo.completed).length} items left`;
@@ -65,7 +78,9 @@ export function removeTodoItem(item) {
     setData(updatedData);
 }
 
-
+/**
+ * Clears all completed todo items from the list
+ */
 export function reorderTodoItems() {
     const items = document.querySelectorAll('.todo-list-item');
     const data = getData();
@@ -77,7 +92,11 @@ export function reorderTodoItems() {
     setData(data);
 }
 
-
+/**
+ * Adds a new todo item to the list
+ * @param {string} value - The text content of the new todo item
+ * @returns {Array} The updated todo list data
+ */
 export function addTodoItem(value) {
     const data = getData();
     try {
