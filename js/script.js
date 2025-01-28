@@ -11,6 +11,18 @@ const filters = document.querySelectorAll('.filter-item');
 const clearCompleted = document.getElementById('clear-completed');
 
 
+document.addEventListener('DOMContentLoaded', () => {
+    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        // Change to dark mode
+        body.classList.add('dark-mode')
+        themeToggler.dataset.mode = 'dark'
+
+        // Change background image
+        document.querySelector('.background-image[data-mode="dark"]').classList.remove('hidden')
+        document.querySelector('.background-image[data-mode="light"]').classList.add('hidden')
+    }
+});
+
 // Initial render
 renderList(getData())
 
