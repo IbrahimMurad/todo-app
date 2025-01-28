@@ -1,0 +1,85 @@
+ul
+    list-style: none
+    display: flex
+    flex-direction: column
+    background-color: var(--primary-background)
+    border-radius: 0.5rem
+    width: 100%
+    box-shadow: 0 0 10px 0 var(--secondary-background)
+
+.check-circle
+    max-height: 1.5rem
+    max-width: 1.5rem
+    min-width: 1.5rem
+    min-height: 1.5rem
+    display: block
+    cursor: pointer
+    border: 2px solid var(--outline-primary)
+    border-radius: 50%
+    position: relative
+
+    &:hover
+        border: 2px solid transparent
+        background: linear-gradient(var(--primary-background), var(--primary-background)) padding-box, var(--check-background) border-box
+
+
+
+.todo-list-item, .list-footer
+    display: flex
+    align-items: center
+    gap: 1rem
+    padding: 1.5rem
+    height: 4rem
+    color: var(--primary-text)
+    font-weight: 600
+
+.todo-list-item
+    border-bottom: 2px solid var(--divider)
+    
+    &:hover
+        background-color: var(--background-hover)
+
+    p
+        font-size: 1rem
+        cursor: pointer
+
+    &[data-completed="true"]
+        
+        p
+            text-decoration: line-through
+            color: var(--tertiary-text)
+
+        .check-circle
+            border: none
+            background-image: var(--check-background)
+
+            &::before
+                content: ''
+                position: absolute
+                top: 0.32rem
+                left: 0.3rem
+                width: 1rem
+                height: 1rem
+                background-color: transparent
+                background-image: url('../../images/icon-check.svg')
+                background-size: contain
+                background-repeat: no-repeat
+                border-radius: 50%
+
+    .cross
+        background-image: url('../../images/icon-cross.svg')
+        min-width: 18px
+        height: 18px
+        margin-left: auto
+        cursor: pointer
+
+.dragging
+    transform: translate(1rem, 0)
+    box-shadow: 0 0 10px 0 var(--secondary-background)
+    border-radius: 0.5rem
+
+.list-footer
+    justify-content: space-between
+    color: var(--tertiary-text)
+    font-weight: 700
+    position: relative

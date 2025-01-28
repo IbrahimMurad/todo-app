@@ -2,35 +2,59 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <script src="https://kit.fontawesome.com/a67337b3ca.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="style/css/main.css">
+  <link rel="stylesheet" href="style/css/header.css">
+  <link rel="stylesheet" href="style/css/input_new_item.css">
+  <link rel="stylesheet" href="style/css/list_item.css">
+  <link rel="stylesheet" href="style/css/filter.css">
+  <link rel="stylesheet" href="style/css/footer.css">
+  <script type="module" src="js/script.js" defer></script>
   
   <title>Frontend Mentor | Todo app</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
 <body>
+  <picture class="background-image" data-mode="light">
+    <source media="(min-width: 769px)" srcset="images/bg-desktop-light.jpg" alt="mountains with gradiant color" width="1440" height="400">
+    <img src="images/bg-mobile-light.jpg" alt="mountains with gradiant color" width="375" height="200">
+  </picture>
+  <picture class="background-image hidden" data-mode="dark">
+    <source media="(min-width: 769px)" srcset="images/bg-desktop-dark.jpg" alt="mountains with gradiant color" width="1440" height="400">
+    <img src="images/bg-mobile-dark.jpg" alt="mountains with gradiant color" width="375" height="200">
+  </picture>
+  <main>
+    <header>
+      <h1 class="header">TODO</h1>
+      <span class="theme-toggler" data-mode="light"></span>
+    </header>
 
-  Todo
+    <section>
+      <div class="input-container">
+        <span class="check-circle checked" id="toggle-all"></span>
+        <input type="text" id="todo-input" placeholder="Create a new todo...">
+        <button id="submit-new" class=""><i class="fa-regular fa-plus"></i></button>
+      </div>
 
-  <!-- Add dynamic number --> items left
+      <ul id="todo-list">
+        <li class="list-footer">
+          <span id="items-left">5 items left</span>
+          <ul class="filter">
+            <li class="filter-item active" id="filter-all">All</li>
+            <li class="filter-item" id="filter-active">Active</li>
+            <li class="filter-item" id="filter-completed">Completed</li>
+          </ul>
+          <span id="clear-completed">Clear Completed</span>
+        </li>
+      </ul>
+    </section>
 
-  All
-  Active 
-  Completed
-
-  Clear Completed
-
-  Drag and drop to reorder list
-
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+    <footer>
+      <p>Drag and drop to reorder list</p>
+    </footer>
+  </main>
 </body>
 </html>

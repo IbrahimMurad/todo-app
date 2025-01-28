@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap')
+
+:root
+    --bright-blue: hsl(220, 98%, 61%)
+    --check-background: linear-gradient(135deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%))
+
+    --body-background: hsl(0, 0%, 98%)
+
+    --primary-background: white
+    --secondary-background: hsl(236, 33%, 92%)
+    --background-hover: hsl(0, 0%, 95%)
+
+    --header-color: hsl(0, 0%, 98%)
+    --primary-text: hsl(235, 19%, 35%)
+    --secondary-text: hsl(236, 9%, 61%)
+    --tertiary-text: hsl(233, 11%, 84%)
+
+    --outline-primary: hsl(233, 11%, 84%)
+    --outline-secondary: hsl(235, 19%, 35%)
+
+    --divider: hsl(236, 33%, 92%)
+
+    // Typography
+
+    font-size: 16px
+    font-family: 'Josefin Sans', sans-serif
+
+.dark-mode
+    --body-background: hsl(235, 21%, 11%)
+
+    --primary-background: hsl(235, 24%, 19%)
+    --secondary-background: hsl(235, 24%, 19%)
+    --background-hover: hsl(237, 14%, 26%)
+
+    --primary-text: hsl(236, 33%, 92%)
+    --secondary-text: hsl(234, 39%, 85%)
+    --tertiary-text: hsl(234, 11%, 52%)
+
+    --outline-primary: hsl(233, 14%, 35%)
+    --outline-secondary: hsl(220, 98%, 61%)
+
+    --divider: hsl(233, 14%, 35%)
+
+*,
+*::before,
+*::after,
+input::placeholder
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+    font-family: 'Josefin Sans', sans-serif
+
+img
+    max-inline-size: 100%
+    width: 100%
+    object-fit: cover
+
+body
+    min-height: 100vh
+    background-color: var(--body-background)
+    display: flex
+    justify-content: center
+    margin-top: 3rem
+
+.background-image
+    position: absolute
+    top: 0
+    left: 0
+    z-index: -1
+    width: 100%
+    object-fit: cover
+    display: block
+
+    &.hidden
+        display: none
+
+main
+    display: flex
+    flex-direction: column
+    align-items: center
+    gap: 3rem
+    padding: 2rem
+    width: 100%
+    min-width: 22rem
+    max-width: 50rem
+
+section
+    display: flex
+    flex-direction: column
+    align-items: center
+    gap: 2rem
+    justify-content: space-between
+    width: 100%
