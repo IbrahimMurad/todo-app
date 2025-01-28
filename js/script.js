@@ -1,4 +1,4 @@
-import { getData, setData, addTodoItem } from "./serveces.js";
+import { getData, setData, addTodoItem, getFilter } from "./serveces.js";
 import renderList from "./TodoList.js";
 
 const body = document.body;
@@ -21,8 +21,7 @@ submitButton.addEventListener('click', () => {
     if (submitButton.classList.contains('active')) {
         // Add the new todo item to the list and rerender the list with the new data and the current filter
         const newData = addTodoItem(todoInput.value);
-        const filter = filterAll.classList.contains('active') ? 'all' : filterActive.classList.contains('active') ? 'active' : 'completed';
-        renderList(newData, filter)
+        renderList(newData, getFilter())
     }
 });
 

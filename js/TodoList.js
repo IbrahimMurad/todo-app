@@ -8,7 +8,7 @@ const todoList = document.getElementById('todo-list');
  * @param {Array} list - The list of todo items to render
  * @param {string} filter - The filter to apply to the list
  */
-export default async function renderList(list, filter = "all") {
+export default function renderList(list, filter = "all") {
 
   // sort the list by the sort order
   list.sort((a, b) => a.sort - b.sort);
