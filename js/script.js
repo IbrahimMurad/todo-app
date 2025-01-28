@@ -15,6 +15,8 @@ const clearCompleted = document.getElementById('clear-completed');
 renderList(getData())
 
 
+document.querySelector('.input-container').addEventListener('submit', (e) => {e.preventDefault()});
+
 // Event listeners for non todo items elements 
 
 submitButton.addEventListener('click', () => {
