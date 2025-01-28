@@ -67,7 +67,6 @@ filters.forEach(filter => {
             
             // Get filter type from element id
             const filterType = filter.id.slice(7);
-            console.log(filterType)
             
             // Render list with appropriate filter
             renderList(getData(), filterType === 'all' ? undefined : filterType);
