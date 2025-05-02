@@ -17,10 +17,10 @@ header {
   background-size: cover;
   cursor: pointer;
 }
-.theme-toggler[data-mode=light] {
+.theme-toggler[data-mode="light"] {
   background-image: url("../../images/icon-moon.svg");
 }
-.theme-toggler[data-mode=dark] {
+.theme-toggler[data-mode="dark"] {
   background-image: url("../../images/icon-sun.svg");
 }
 

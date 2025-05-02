@@ -19,10 +19,16 @@ ul {
 }
 .check-circle:hover {
   border: 2px solid transparent;
-  background: linear-gradient(var(--primary-background), var(--primary-background)) padding-box, var(--check-background) border-box;
+  background: linear-gradient(
+        var(--primary-background),
+        var(--primary-background)
+      )
+      padding-box,
+    var(--check-background) border-box;
 }
 
-.todo-list-item, .list-footer {
+.todo-list-item,
+.list-footer {
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -42,15 +48,15 @@ ul {
   font-size: 1rem;
   cursor: pointer;
 }
-.todo-list-item[data-completed=true] p {
+.todo-list-item[data-completed="true"] p {
   text-decoration: line-through;
   color: var(--tertiary-text);
 }
-.todo-list-item[data-completed=true] .check-circle {
+.todo-list-item[data-completed="true"] .check-circle {
   border: none;
   background-image: var(--check-background);
 }
-.todo-list-item[data-completed=true] .check-circle::before {
+.todo-list-item[data-completed="true"] .check-circle::before {
   content: "";
   position: absolute;
   top: 0.32rem;
